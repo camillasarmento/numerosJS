@@ -1,0 +1,44 @@
+<!--- 2-CALCULO OPERACION A ELEGIR - Pide dos números. Pide si quiere sumar o restar (+/-). Según el caso, llama
+// a la función sumar() o restar() pasándole esos parametros y muestra el resultado de sumar o restar ambos
+// números. Prueba a realizar esto sin return.
+// +EXTRA: prueba a realizar lo mismo con return.--->
+
+<p>Calculo</p>
+
+<input type="number" id="num1">
+<br>
+<input type="number" id="num2">
+<br>
+Quieres Sumar o Restar?
+<br>
+<input type="text" id="operacion" value="">
+<br>
+<button type="submit" onclick="calculate_event()">Calcular</button>
+
+<p id="respuesta"></p>
+<!-- campo de respuesta -->
+
+<script>
+
+function calculate(num1, num2, operador) {
+
+    if (operador === "Sumar") {
+        return num1 + num2;
+    } else if (operador === "Restar") {
+        return num1 - num2;
+    } else {
+        return "ERROR";
+    }
+}
+
+function calculate_event() {
+    var num1 = parseInt(document.getElementById('num1').value);
+    var num2 = parseInt(document.getElementById('num2').value);
+    var operador = document.getElementById('operacion').value;
+
+    let result = calculate(num1, num2, operador);
+
+    document.getElementById('respuesta').innerHTML = result;
+}
+
+</script>
